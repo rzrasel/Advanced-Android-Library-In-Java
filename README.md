@@ -46,16 +46,22 @@ LogWriter.Log("DEBUG_LOG: This is a LogWriter Log");
 LogWriter.Log("TAG", "This is a LogWriter Log");
 
 // Option 3:
-LogWriter.iLog("TAG", "This is a LogWriter Log");
+LogWriter.iLog("DEBUG_LOG: This is a LogWriter Log");
 
 // Option 4:
-LogWriter.iLog("This is a LogWriter Log");
+LogWriter.iLog("TAG", "This is a LogWriter Log");
 
 // Option 5:
-LogWriter.dLog("TAG", "This is a LogWriter Log");
+LogWriter.dLog("DEBUG_LOG: This is a LogWriter Log");
 
 // Option 6:
-LogWriter.dLog("This is a LogWriter Log");
+LogWriter.dLog("TAG", "This is a LogWriter Log");
+
+// Option 7:
+LogWriter.eLog("DEBUG_LOG: This is a LogWriter Log");
+
+// Option 8:
+LogWriter.eLog("TAG", "This is a LogWriter Log");
 ```
 
 - - - -
