@@ -71,12 +71,12 @@ LogWriter.eLog("TAG", "This is a LogWriter Log");
 Initialization RedirectWindow
 ```redirect_window_001
 public class ActivitySplash {
-	//...
+    //...
     private RedirectWindow redirectWindow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-		//...
+	//...
         onRedirectActivity(ActivityToRedirect.class);
     }
 
@@ -89,11 +89,11 @@ public class ActivitySplash {
 Another Way Of Initialization RedirectWindow
 ```redirect_window_002
 public class ActivitySplash {
-	//...
+    //...
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-		//...
+	//...
         onRedirectActivity(ActivityToRedirect.class);
     }
 
@@ -106,7 +106,7 @@ public class ActivitySplash {
 Simple Call Of RedirectWindow
 ```redirect_window_003
 public class ActivitySplash {
-	//...
+    //...
 
     private void onRedirectActivity(Class argRedirectClass) {
         //...
@@ -117,16 +117,16 @@ public class ActivitySplash {
 Redirect With Passing Data RedirectWindow
 ```redirect_window_004
 public class ActivitySplash {
-	//...
+    //...
 
     private void onRedirectActivity(Class argRedirectClass) {
         //...
-		Intent intent = redirectWindow.getNewIntent();
-		intent.putExtra("extra_item", extraData);
+	Intent intent = redirectWindow.getNewIntent();
+	intent.putExtra("extra_item", extraData);
 
-		Bundle bundle = new Bundle();
-		bundle.putSerializable("serializable_item", serializableData);
-		intent.putExtras(bundle);
+	Bundle bundle = new Bundle();
+	bundle.putSerializable("serializable_item", serializableData);
+	intent.putExtras(bundle);
 		
         redirectWindow.execute(argRedirectClass);
     }
