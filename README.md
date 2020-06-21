@@ -57,5 +57,8 @@ LogWriter.dLog("TAG", "This is a LogWriter Log");
 // Option 6:
 LogWriter.dLog("This is a LogWriter Log");
 ```
+
+- - - -
+
 ### Usage Of RedirectWindow - Android Library
 #### RedirectWindow Library:
