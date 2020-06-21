@@ -26,7 +26,7 @@ dependencies {
 	* RedirectWindow
 
 ### Usage Of LogWriter Log - Android Library
-#### LogWriter Log:
+#### LogWriter Log Library:
 ```log_writer_log_001
 // Enable or disable LogWriter. By default LogWriter is enabled.
 /*
@@ -58,3 +58,4 @@ LogWriter.dLog("TAG", "This is a LogWriter Log");
 LogWriter.dLog("This is a LogWriter Log");
 ```
 ### Usage Of RedirectWindow - Android Library
+#### RedirectWindow Library:
