@@ -21,5 +21,9 @@ dependencies {
 ```
 
 ### Usage Of LogWriter
-
-
+LogWriter Log
+```log_writer_log
+// Enable or disable LogWriter. By default LogWriter is enabled.
+LogWriter.isDebug = true; // If debug is true -> LogWriter is enabled. Else if debug is false -> LogWriter is disabled
+LogWriter.Log("DEBUG_LOG: This is a LogWriter Log");
+```
