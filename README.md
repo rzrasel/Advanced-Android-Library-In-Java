@@ -71,6 +71,7 @@ LogWriter.eLog("TAG", "This is a LogWriter Log");
 Initialization RedirectWindow
 ```redirect_window_001
 private RedirectWindow redirectWindow;
+
 @Override
 protected void onCreate(Bundle savedInstanceState) {
 	onRedirectActivity(ActivityToRedirect.class)
