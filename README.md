@@ -73,11 +73,11 @@ Initialization RedirectWindow
 private RedirectWindow redirectWindow;
 @Override
 protected void onCreate(Bundle savedInstanceState) {
-	onRedirectActivity(ActivityToRedirect.class)
+    onRedirectActivity(ActivityToRedirect.class)
 }
 
 private void onRedirectActivity(Class argRedirectClass) {
-	redirectWindow = new RedirectWindow(activity, context);
+    redirectWindow = new RedirectWindow(activity, context);
 }
 ```
 ```redirect_window_002
