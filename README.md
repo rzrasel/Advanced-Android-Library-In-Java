@@ -22,12 +22,12 @@ dependencies {
 
 ### Android Libraries In "rz.rasel:android-java-core-library:{version}"
 * Libraries In This Package:
-    * [LogWriter](#log_writer_log_001 "Goto #log_writer_log_001")
+    * [LogWriter](#logwriter-log "Goto #logwriter-log")
 	* RedirectWindow
 
 ### Usage Of LogWriter Log - Android Library
 #### LogWriter Log:
-```#log_writer_log_001
+```log_writer_log_001
 // Enable or disable LogWriter. By default LogWriter is enabled.
 /*
 * If debug is true -> LogWriter is enabled.
