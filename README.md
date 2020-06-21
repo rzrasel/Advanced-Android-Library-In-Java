@@ -128,7 +128,8 @@ public class ActivitySplash {
 	bundle.putSerializable("serializable_item", serializableData);
 	intent.putExtras(bundle);
 		
-        redirectWindow.execute(argRedirectClass);
+        redirectWindow.withIntent(intent)
+			.execute(argRedirectClass);
     }
 }
 ```
