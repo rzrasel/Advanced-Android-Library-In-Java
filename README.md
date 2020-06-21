@@ -68,7 +68,19 @@ LogWriter.eLog("TAG", "This is a LogWriter Log");
 
 ### Usage Of RedirectWindow - Android Library
 #### RedirectWindow Library:
+Initialization RedirectWindow
 ```redirect_window_001
+private RedirectWindow redirectWindow;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+	onRedirectActivity(ActivityToRedirect.class)
+}
+
+private void onRedirectActivity(Class argRedirectClass) {
+	redirectWindow = new RedirectWindow(activity, context);
+}
+```
+```redirect_window_002
 RedirectWindow redirectWindow = new RedirectWindow(activity, context);
 
 Intent intent = redirectWindow.getNewIntent();
