@@ -22,8 +22,8 @@ dependencies {
 
 ### Android Libraries In "rz.rasel:android-java-core-library:{version}"
 * Libraries In This Package:
-    * [LogWriter](#logwriter-log "Goto #logwriter-log")
-	* RedirectWindow
+    * [LogWriter Library](#logwriter-log-library "Goto #logwriter-log-library")
+	* [RedirectWindow Library](#redirectwindow-library "Goto #redirectwindow-library")
 
 ### Usage Of LogWriter Log - Android Library
 #### LogWriter Log Library:
