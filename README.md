@@ -114,7 +114,7 @@ public class ActivitySplash {
     }
 }
 ```
-Redirect With Passing Data To Another Activity
+Redirect With Passing Data To Redirected Activity
 ```redirect_window_004
 public class ActivitySplash {
     //...
@@ -133,16 +133,22 @@ public class ActivitySplash {
     }
 }
 ```
+Get/Grab Data From Redirected Activity
 ```redirect_window_005
-RedirectWindow redirectWindow = new RedirectWindow(activity, context);
+public class ActivityToRedirect {
+    //..
+    private RedirectWindow redirectWindow;
 
-Intent intent = redirectWindow.getNewIntent();
-intent.putExtra("extra_item", extraData);
-
-Bundle bundle = new Bundle();
-bundle.putSerializable("serializable_item", serializableData);
-intent.putExtras(bundle);
-
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        //...
+        redirectWindow = new RedirectWindow(activity, context);
+        Intent intent = redirectWindow.getParsedIntent();
+        Bundle bundleExtras = intent.getExtras();
+    }
+}
+```
+```redirect_window_006
 redirectWindow.withFlag()
 	.withIntent(intent)
 	.disposeWindow()
