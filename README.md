@@ -21,7 +21,7 @@ dependencies {
 ```
 
 ### Usage Of LogWriter Log
-LogWriter Log
+LogWriter Log:
 ```log_writer_log_001
 // Enable or disable LogWriter. By default LogWriter is enabled.
 /*
@@ -32,7 +32,14 @@ LogWriter.isDebug = true;
 LogWriter.Log("DEBUG_LOG: This is a LogWriter Log");
 ```
 
-Simple Usage Of LogWriter Log
+Simple Usage Of LogWriter Log:
 ```log_writer_log_002
+// Option 1:
 LogWriter.Log("DEBUG_LOG: This is a LogWriter Log");
+// Option 2:
+LogWriter.Log("TAG", "This is a LogWriter Log");
+// Option 3:
+LogWriter.iLog("TAG", "This is a LogWriter Log");
+// Option 4:
+LogWriter.iLog("This is a LogWriter Log");
 ```
