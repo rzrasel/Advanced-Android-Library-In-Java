@@ -45,4 +45,10 @@ LogWriter.iLog("TAG", "This is a LogWriter Log");
 
 // Option 4:
 LogWriter.iLog("This is a LogWriter Log");
+
+// Option 5:
+LogWriter.dLog("TAG", "This is a LogWriter Log");
+
+// Option 6:
+LogWriter.dLog("This is a LogWriter Log");
 ```
