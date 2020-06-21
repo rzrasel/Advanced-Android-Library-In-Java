@@ -114,7 +114,7 @@ public class ActivitySplash {
     }
 }
 ```
-Redirect With Passing Data RedirectWindow
+Redirect With Passing Data To Another Activity
 ```redirect_window_004
 public class ActivitySplash {
     //...
@@ -129,7 +129,7 @@ public class ActivitySplash {
 	intent.putExtras(bundle);
 		
         redirectWindow.withIntent(intent)
-			.execute(argRedirectClass);
+		.execute(argRedirectClass);
     }
 }
 ```
