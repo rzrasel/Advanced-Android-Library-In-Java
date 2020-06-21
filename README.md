@@ -70,7 +70,7 @@ LogWriter.eLog("TAG", "This is a LogWriter Log");
 #### RedirectWindow Library:
 Initialization RedirectWindow
 ```redirect_window_001
-public class ActivitySplash {
+public class ActivityMain {
     //...
     private RedirectWindow redirectWindow;
 
@@ -88,7 +88,7 @@ public class ActivitySplash {
 ```
 Another Way Of Initialization RedirectWindow
 ```redirect_window_002
-public class ActivitySplash {
+public class ActivityMain {
     //...
 
     @Override
@@ -105,7 +105,7 @@ public class ActivitySplash {
 ```
 Simple Call Of RedirectWindow
 ```redirect_window_003
-public class ActivitySplash {
+public class ActivityMain {
     //...
 
     private void onRedirectActivity(Class argRedirectClass) {
@@ -116,7 +116,7 @@ public class ActivitySplash {
 ```
 Redirect With Passing Data To Redirected Activity
 ```redirect_window_004
-public class ActivitySplash {
+public class ActivityMain {
     //...
 
     private void onRedirectActivity(Class argRedirectClass) {
