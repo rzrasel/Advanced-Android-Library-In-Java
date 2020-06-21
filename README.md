@@ -71,19 +71,33 @@ LogWriter.eLog("TAG", "This is a LogWriter Log");
 Initialization RedirectWindow
 ```redirect_window_001
 public class ActivitySplash {
+	//...
     private RedirectWindow redirectWindow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+		//...
         onRedirectActivity(ActivityToRedirect.class);
     }
 
     private void onRedirectActivity(Class argRedirectClass) {
+        //...
         redirectWindow = new RedirectWindow(activity, context);
     }
 }
 ```
+Simple Call Of RedirectWindow
 ```redirect_window_002
+public class ActivitySplash {
+	//...
+
+    private void onRedirectActivity(Class argRedirectClass) {
+        //...
+        redirectWindow.execute(argRedirectClass);
+    }
+}
+```
+```redirect_window_003
 RedirectWindow redirectWindow = new RedirectWindow(activity, context);
 
 Intent intent = redirectWindow.getNewIntent();
