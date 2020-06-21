@@ -86,8 +86,25 @@ public class ActivitySplash {
     }
 }
 ```
-Simple Call Of RedirectWindow
+Another Way Of Initialization RedirectWindow
 ```redirect_window_002
+public class ActivitySplash {
+	//...
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+		//...
+        onRedirectActivity(ActivityToRedirect.class);
+    }
+
+    private void onRedirectActivity(Class argRedirectClass) {
+        //...
+        RedirectWindow redirectWindow = new RedirectWindow(activity, context);
+    }
+}
+```
+Simple Call Of RedirectWindow
+```redirect_window_003
 public class ActivitySplash {
 	//...
 
@@ -97,7 +114,25 @@ public class ActivitySplash {
     }
 }
 ```
-```redirect_window_003
+Redirect With Passing Data RedirectWindow
+```redirect_window_004
+public class ActivitySplash {
+	//...
+
+    private void onRedirectActivity(Class argRedirectClass) {
+        //...
+		Intent intent = redirectWindow.getNewIntent();
+		intent.putExtra("extra_item", extraData);
+
+		Bundle bundle = new Bundle();
+		bundle.putSerializable("serializable_item", serializableData);
+		intent.putExtras(bundle);
+		
+        redirectWindow.execute(argRedirectClass);
+    }
+}
+```
+```redirect_window_005
 RedirectWindow redirectWindow = new RedirectWindow(activity, context);
 
 Intent intent = redirectWindow.getNewIntent();
