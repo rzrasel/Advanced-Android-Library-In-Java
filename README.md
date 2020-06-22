@@ -24,7 +24,7 @@ dependencies {
 * Libraries In This Package:
     * [LogWriter Library](#logwriter-log-library "Goto #logwriter-log-library")
 	* [RedirectWindow Library](#redirectwindow-library "Goto #redirectwindow-library")
-	* [ManifestPermissions Library](#redirectwindow-library "Goto #redirectwindow-library")
+	* [ManifestPermissions Library](#manifestpermissions-library "Goto #manifestpermissions-library")
 
 ### Usage Of LogWriter Log - Android Library
 #### LogWriter Log Library:
@@ -155,6 +155,9 @@ redirectWindow.withFlag()
 	.disposeWindow()
 	.execute(ActivityTarget.class);
 ```
+
+- - - -
+
 ### Usage Of ManifestPermissions - Android Library
 #### ManifestPermissions Library:
 ```manifest_permissions_001
