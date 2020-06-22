@@ -16,7 +16,7 @@ buildscript {
 build.gradle (module path)
 ```groovy_android_gradle_dependency
 dependencies {  
-  implementation "rz.rasel:android-java-core-library:128.00.01"
+  implementation "rz.rasel:android-java-core-library:128.00.02"
 }
 ```
 
@@ -24,6 +24,7 @@ dependencies {
 * Libraries In This Package:
     * [LogWriter Library](#logwriter-log-library "Goto #logwriter-log-library")
 	* [RedirectWindow Library](#redirectwindow-library "Goto #redirectwindow-library")
+	* [ManifestPermissions Library](#redirectwindow-library "Goto #redirectwindow-library")
 
 ### Usage Of LogWriter Log - Android Library
 #### LogWriter Log Library:
@@ -153,4 +154,51 @@ redirectWindow.withFlag()
 	.withIntent(intent)
 	.disposeWindow()
 	.execute(ActivityTarget.class);
+```
+### Usage Of ManifestPermissions - Android Library
+#### ManifestPermissions Library:
+```manifest_permissions_001
+private ManifestPermissions manifestPermissions;
+private String[] PERMISSIONS = {
+	Manifest.permission.WRITE_EXTERNAL_STORAGE,
+	Manifest.permission.READ_EXTERNAL_STORAGE,
+	Manifest.permission.READ_PHONE_STATE,
+	//Manifest.permission.REQUEST_INSTALL_PACKAGES,
+};
+public static int PERMISSIONS_REQUEST_CODE = 1120;
+private boolean isPermissionGranted = false;
+
+private void onManifestPermissions() {
+	manifestPermissions = ManifestPermissions.getInstance(context);
+	manifestPermissions.onSetEventListener(new ManifestPermissions.OnEventListenerHandler() {
+		@Override
+		public void onPermissionGranted(boolean argIsGranted) {
+			//isPermissionGranted = argIsGranted;
+			System.out.println("ERROR_SUCCESS_DEBUG_RESPONSE: called");
+			if (!argIsGranted) {
+				manifestPermissions.onRequestPermissions(ManifestPermissions.READ_LOGS, PERMISSIONS);
+			} else {
+				isPermissionGranted = true;
+				//onRedirectWindow(ActivitySplashMidwayOne.class);
+				//onPerformRequest();
+			}
+		}
+	});
+	if (!manifestPermissions.hasPermission(PERMISSIONS)) {
+		isPermissionGranted = false;
+		manifestPermissions.onRequestPermissions(ManifestPermissions.READ_LOGS, PERMISSIONS);
+	} else {
+		isPermissionGranted = true;
+		//onRedirectWindow(ActivitySplashMidwayOne.class);
+		//onPerformRequest();
+	}
+}
+
+@Override
+public void onRequestPermissionsResult(int argRequestCode, @NonNull String[] argPermissions, @NonNull int[] argGrantResults) {
+	if (argRequestCode == ManifestPermissions.READ_LOGS) {
+		manifestPermissions.onRequestPermissionsResult(argRequestCode, argPermissions, argGrantResults, ManifestPermissions.READ_LOGS);
+	}
+	super.onRequestPermissionsResult(argRequestCode, argPermissions, argGrantResults);
+}
 ```
